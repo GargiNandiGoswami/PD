@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Programmer's Day 2025 - Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .slide {
+            display: none;
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+            }
+        }
+        
+        .morph {
+            transition: all 0.3s ease;
+        }
+        
+        .morph:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .nav-btn:disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        
+        .slide-counter {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 overflow-hidden">
+    <!-- Navigation Controls -->
+    <div class="fixed top-6 right-6 z-50 flex items-center space-x-4">
+        <div class="slide-counter text-white px-4 py-2 rounded-full text-sm font-medium">
+            <span id="currentSlide">1</span> / <span id="totalSlides">9</span>
+        </div>
+        <button id="prevBtn" class="nav-btn bg-white/20 backdrop-blur-lg text-white p-3 rounded-full hover:bg-white/30" disabled>
+            ←
+        </button>
+        <button id="nextBtn" class="nav-btn bg-white/20 backdrop-blur-lg text-white p-3 rounded-full hover:bg-white/30">
+            →
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-black/20 z-40">
+        <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 11.11%"></div>
+    </div>
+
+    <!-- Slide 1: Title Slide -->
+    <div class="slide active gradient-bg items-center justify-center relative">
+        <div class="text-center z-10 px-4">
+            <div class="floating">
+                <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 fade-in">
+                    Happy Programmer's Day!
+                    <span class="inline-block ml-4">💻</span>
+                    <span class="inline-block ml-2">🚀</span>
+                    <span class="inline-block ml-2">⚡</span>
+                </h1>
+            </div>
+            <p class="text-xl md:text-2xl text-white/90 mb-8 fade-in">
+                Celebrating the 256th day of the year - September 13th, 2025
+            </p>
+            <div class="flex justify-center space-x-6 text-4xl fade-in">
+                <span class="floating">🎉</span>
+                <span class="floating" style="animation-delay: 0.5s;">👨‍💻</span>
+                <span class="floating" style="animation-delay: 1s;">🎯</span>
+                <span class="floating" style="animation-delay: 1.5s;">🔥</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: History of Programming -->
+    <div class="slide bg-white items-center justify-center">
+        <div class="container mx-auto px-4 py-20">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text fade-in">
+                📚 History of Programming
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="morph bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl pulse-glow fade-in">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800">1940s-1950s</h3>
+                    <p class="text-gray-700">Assembly language and FORTRAN emerged. The first programmers were mathematicians and engineers working on massive room-sized computers.</p>
+                </div>
+                <div class="morph bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl pulse-glow fade-in">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-800">1960s-1970s</h3>
+                    <p class="text-gray-700">C language revolutionized programming. UNIX was born. Programming became more accessible with higher-level languages.</p>
+                </div>
+                <div class="morph bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl pulse-glow fade-in">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-800">1980s-1990s</h3>
+                    <p class="text-gray-700">Personal computers exploded. C++, Python, and Java emerged. The internet changed everything for programmers worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Why 256th Day -->
+    <div class="slide bg-gradient-to-r from-indigo-500 to-purple-600 items-center justify-center">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="text-5xl font-bold mb-12 fade-in">
+                🔢 Why the 256th Day?
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-12 morph fade-in">
+                    <div class="text-8xl mb-8 floating">256</div>
+                    <h3 class="text-3xl font-bold mb-6">2^8 = 256</h3>
+                    <p class="text-xl leading-relaxed mb-8">
+                        256 is the highest power of 2 that's less than 365 (days in a year). It represents the number of distinct values that can be represented with 8 bits - a fundamental concept in computer science and programming!
+                    </p>
+                    <div class="flex justify-center space-x-8 text-2xl">
+                        <span class="floating">1️⃣</span>
+                        <span class="floating" style="animation-delay: 0.2s;">0️⃣</span>
+                        <span class="floating" style="animation-delay: 0.4s;">1️⃣</span>
+                        <span class="floating" style="animation-delay: 0.6s;">0️⃣</span>
+                        <span class="floating" style="animation-delay: 0.8s;">1️⃣</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Technical Skills -->
+    <div class="slide bg-gray-100 items-center justify-center">
+        <div class="container mx-auto px-4 py-20">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text fade-in">
+                💻 Technical Skills
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg morph fade-in">
+                    <h4 class="font-bold text-xl mb-4 text-blue-600">Programming Languages</h4>
+                    <p class="text-gray-600 mb-4">Python, JavaScript, Java, C++, Go, Rust</p>
+                    <div class="text-3xl">🐍</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg morph fade-in">
+                    <h4 class="font-bold text-xl mb-4 text-green-600">Data Structures & Algorithms</h4>
+                    <p class="text-gray-600 mb-4">Arrays, Trees, Graphs, Sorting, Searching</p>
+                    <div class="text-3xl">🌳</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg morph fade-in">
+                    <h4 class="font-bold text-xl mb-4 text-purple-600">Version Control</h4>
+                    <p class="text-gray-600 mb-4">Git, GitHub, GitLab, Branching strategies</p>
+                    <div class="text-3xl">🔀</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg morph fade-in">
+                    <h4 class="font-bold text-xl mb-4 text-red-600">Database Management</h4>
+                    <p class="text-gray-600 mb-4">SQL, NoSQL, MongoDB, PostgreSQL</p>
+                    <div class="text-3xl">🗄️</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Soft Skills -->
+    <div class="slide bg-gradient-to-br from-green-400 to-blue-500 items-center justify-center">
+        <div class="container mx-auto px-4 py-20 text-white">
+            <h2 class="text-5xl font-bold text-center mb-16 fade-in">
+                🧠 Essential Soft Skills
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl morph fade-in">
+                    <div class="text-4xl mb-4">🧩</div>
+                    <h4 class="font-bold text-xl mb-4">Problem Solving</h4>
+                    <p>Breaking down complex problems into manageable parts</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl morph fade-in">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h4 class="font-bold text-xl mb-4">Communication</h4>
+                    <p>Explaining technical concepts to non-technical stakeholders</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl morph fade-in">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h4 class="font-bold text-xl mb-4">Continuous Learning</h4>
+                    <p>Staying updated with new technologies and trends</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl morph fade-in">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h4 class="font-bold text-xl mb-4">Team Collaboration</h4>
+                    <p>Working effectively in agile development teams</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Freelancing Tips -->
+    <div class="slide bg-gradient-to-r from-orange-400 to-pink-500 items-center justify-center">
+        <div class="container mx-auto px-4 py-20 text-white">
+            <h2 class="text-5xl font-bold text-center mb-16 fade-in">
+                💼 Freelancing Success Tips
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl morph text-center fade-in">
+                    <div class="text-4xl mb-4 floating">🎯</div>
+                    <h3 class="text-lg font-bold mb-3">Build Strong Portfolio</h3>
+                    <p class="text-sm">Showcase your best projects with live demos</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl morph text-center fade-in">
+                    <div class="text-4xl mb-4 floating">💰</div>
+                    <h3 class="text-lg font-bold mb-3">Price Strategically</h3>
+                    <p class="text-sm">Research market rates and value expertise</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl morph text-center fade-in">
+                    <div class="text-4xl mb-4 floating">🤝</div>
+                    <h3 class="text-lg font-bold mb-3">Network Actively</h3>
+                    <p class="text-sm">Join communities and build relationships</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl morph text-center fade-in">
+                    <div class="text-4xl mb-4 floating">⏰</div>
+                    <h3 class="text-lg font-bold mb-3">Manage Time Well</h3>
+                    <p class="text-sm">Use tools and set clear boundaries</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Career Opportunities -->
+    <div class="slide bg-white items-center justify-center">
+        <div class="container mx-auto px-4 py-20">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text fade-in">
+                🚀 Career Opportunities
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="morph bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl pulse-glow fade-in">
+                    <div class="text-3xl mb-3">🌐</div>
+                    <h3 class="text-lg font-bold mb-2 text-red-800">Web Development</h3>
+                    <p class="text-gray-700 text-sm mb-2">Frontend, Backend, Full-stack</p>
+                    <div class="text-xs text-red-600 font-semibold">$60k - $150k+</div>
+                </div>
+                <div class="morph bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-2xl pulse-glow fade-in">
+                    <div class="text-3xl mb-3">📱</div>
+                    <h3 class="text-lg font-bold mb-2 text-yellow-800">Mobile Development</h3>
+                    <p class="text-gray-700 text-sm mb-2">iOS, Android, Cross-platform</p>
+                    <div class="text-xs text-yellow-600 font-semibold">$70k - $160k+</div>
+                </div>
+                <div class="morph bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-2xl pulse-glow fade-in">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h3 class="text-lg font-bold mb-2 text-indigo-800">AI/ML Engineering</h3>
+                    <p class="text-gray-700 text-sm mb-2">Machine Learning, Deep Learning</p>
+                    <div class="text-xs text-indigo-600 font-semibold">$90k - $200k+</div>
+                </div>
+                <div class="morph bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-2xl pulse-glow fade-in">
+                    <div class="text-3xl mb-3">☁️</div>
+                    <h3 class="text-lg font-bold mb-2 text-teal-800">Cloud Engineering</h3>
+                    <p class="text-gray-700 text-sm mb-2">AWS, Azure, GCP, DevOps</p>
+                    <div class="text-xs text-teal-600 font-semibold">$80k - $180k+</div>
+                </div>
+                <div class="morph bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl pulse-glow fade-in">
+                    <div class="text-3xl mb-3">🔒</div>
+                    <h3 class="text-lg font-bold mb-2 text-pink-800">Cybersecurity</h3>
+                    <p class="text-gray-700 text-sm mb-2">Security Engineering, Pen Testing</p>
+                    <div class="text-xs text-pink-600 font-semibold">$85k - $190k+</div>
+                </div>
+                <div class="morph bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl pulse-glow fade-in">
+                    <div class="text-3xl mb-3">📊</div>
+                    <h3 class="text-lg font-bold mb-2 text-orange-800">Data Science</h3>
+                    <p class="text-gray-700 text-sm mb-2">Analysis, Visualization, BI</p>
+                    <div class="text-xs text-orange-600 font-semibold">$75k - $170k+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Future Trends -->
+    <div class="slide bg-gradient-to-r from-purple-600 to-pink-600 items-center justify-center">
+        <div class="container mx-auto px-4 py-20 text-white">
+            <h2 class="text-5xl font-bold text-center mb-16 fade-in">
+                🔮 Future Trends & Growth
+            </h2>
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="space-y-6 fade-in">
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl morph">
+                        <h3 class="text-xl font-bold mb-3">🤖 AI-Powered Development</h3>
+                        <p class="text-white/90">AI assistants helping write and optimize code</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl morph">
+                        <h3 class="text-xl font-bold mb-3">🌐 Web3 & Blockchain</h3>
+                        <p class="text-white/90">Decentralized apps reshaping the internet</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl morph">
+                        <h3 class="text-xl font-bold mb-3">🥽 AR/VR Development</h3>
+                        <p class="text-white/90">Immersive experiences and new paradigms</p>
+                    </div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white/10 backdrop-blur-lg p-12 rounded-3xl morph">
+                        <div class="text-6xl mb-6 floating">📈</div>
+                        <h3 class="text-2xl font-bold mb-4">Job Growth Projection</h3>
+                        <div class="text-5xl font-bold text-yellow-300 mb-4">22%</div>
+                        <p class="text-white/90">Expected growth 2020-2030</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Pro Tips -->
+    <div class="slide bg-gray-900 items-center justify-center">
+        <div class="container mx-auto px-4 py-20">
+            <h2 class="text-5xl font-bold text-center mb-16 text-white fade-in">
+                💡 Pro Tips for Success
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-2xl morph text-white fade-in">
+                    <div class="text-3xl mb-3 floating">📚</div>
+                    <h3 class="text-lg font-bold mb-3">Never Stop Learning</h3>
+                    <p class="text-sm">Dedicate time weekly to new skills</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-600 to-green-800 p-6 rounded-2xl morph text-white fade-in">
+                    <div class="text-3xl mb-3 floating">🔧</div>
+                    <h3 class="text-lg font-bold mb-3">Build Side Projects</h3>
+                    <p class="text-sm">Showcase creativity and passion</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-600 to-purple-800 p-6 rounded-2xl morph text-white fade-in">
+                    <div class="text-3xl mb-3 floating">🤝</div>
+                    <h3 class="text-lg font-bold mb-3">Open Source</h3>
+                    <p class="text-sm">Give back while building network</p>
+                </div>
+                <div class="bg-gradient-to-br from-red-600 to-red-800 p-6 rounded-2xl morph text-white fade-in">
+                    <div class="text-3xl mb-3 floating">💪</div>
+                    <h3 class="text-lg font-bold mb-3">Practice Problems</h3>
+                    <p class="text-sm">Keep algorithmic thinking sharp</p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-600 to-yellow-800 p-6 rounded-2xl morph text-white fade-in">
+                    <div class="text-3xl mb-3 floating">🎯</div>
+                    <h3 class="text-lg font-bold mb-3">Focus on Quality</h3>
+                    <p class="text-sm">Write clean, maintainable code</p>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-600 to-indigo-800 p-6 rounded-2xl morph text-white fade-in">
+                    <div class="text-3xl mb-3 floating">🌟</div>
+                    <h3 class="text-lg font-bold mb-3">Stay Curious</h3>
+                    <p class="text-sm">Never lose sense of wonder</p>
+                </div>
+            </div>
+            <div class="text-center mt-12 fade-in">
+                <div class="text-6xl mb-4 floating">🎉</div>
+                <h3 class="text-3xl font-bold text-white mb-4">Happy Programmer's Day!</h3>
+                <p class="text-white/90 text-lg">Keep coding, keep creating, keep innovating! 🚀</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideSpan = document.getElementById('currentSlide');
+        const totalSlidesSpan = document.getElementById('totalSlides');
+        const progressBar = document.getElementById('progressBar');
+
+        totalSlidesSpan.textContent = totalSlides;
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            currentSlideSpan.textContent = currentSlide + 1;
+            progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+
+            // Trigger animations for current slide
+            setTimeout(() => {
+                const activeSlide = slides[currentSlide];
+                const animatedElements = activeSlide.querySelectorAll('.fade-in');
+                animatedElements.forEach((el, index) => {
+                    el.style.animationDelay = `${index * 0.1}s`;
+                    el.style.animation = 'none';
+                    el.offsetHeight; // Trigger reflow
+                    el.style.animation = 'fadeIn 0.8s ease-out forwards';
+                });
+            }, 100);
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        updateSlide();
+
+        // Add touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    nextSlide(); // Swipe left - next slide
+                } else {
+                    prevSlide(); // Swipe right - previous slide
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
